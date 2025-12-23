@@ -469,8 +469,106 @@
 // };
 
 
-console.log("Hi there");
-setTimeout( ()=>{
-    console.log("shahdev kumar ");
-},4000);
-console.log("WElcome to ");
+// console.log("Hi there");
+// setTimeout( ()=>{
+//     console.log("shahdev kumar ");
+// },4000);
+// console.log("WElcome to ");
+
+
+
+// let btn = document.querySelector("button");
+// console.dir(btn);
+
+// btn.onclick = function(){
+//     console.log("button was clicked");
+
+// }
+
+
+
+// function hello(){
+//     console.log("hello");
+// }
+//  function demo(){
+//     hello();
+//  }
+
+//  demo();
+
+
+
+// function one(){
+//     return 1;
+// }
+
+// function two(){
+//     return one()+ one();
+// }
+
+// function three(){
+//     let ans = two()+one();
+//     console.log(ans);
+
+// }
+
+// three();
+
+
+// function savetoDb(data,sucess, failure){
+//     let internetSpeed = Math.floor(Math.random()*10)+1;
+//     if(internetSpeed >4){
+//        sucess();
+
+//     }
+//     else{
+//         failure();
+//         }
+
+// }
+
+
+// savetoDb(
+//     "kumar",
+//     ()=>{
+//         console.log("success:you data was saved");
+//     },
+//     ()=>{
+//         console.log("failure: you data was not saved!");
+//     }
+// )
+
+
+
+
+
+
+
+
+
+
+
+function savetoDb(data){
+    
+    return new Promise((reslove,reject)=>{
+
+        let internetSpeed = Math.floor(Math.random()*10)+1;
+        if(internetSpeed>4){
+            reslove("was success");
+        }
+        else{
+            reject("was failed!");
+        }
+    });
+
+
+}
+
+
+savetoDb("kuamr")
+.then(()=>{
+    console.log("promise was resloved")
+})
+.catch(()=>{
+    console.log("promise was rejected!")
+});
